@@ -155,9 +155,22 @@ export default function AboutUs(){
       </div>
 
       {/* member section */}
-      <div className="w-full mt-20 flex justify-center">
+      <div className="w-full mt-20 flex flex-col justify-center items-center bg-custom-green py-10">
         <div className="w-full max-w-[1400px] p-6">
-            
+            <h2 className="text-center text-4xl text-white uppercase">Governance</h2>
+        </div>
+        <div className="w-full max-w-[1400px] p-6 flex gap-4">
+            {members.map((mem, index) => (
+                <div key={index} className="w-[25%] p-4 flex flex-col justify-center items-center">
+                    <div className="w-[200px] h-[200px] aspect-square relative">
+                        <Image src={mem.image} fill alt="" className="rounded-full" />
+                    </div>
+                    <h3 className="mt-4 text-xl font-bold text-white">{mem.title}</h3>
+                </div>
+            ))}
+        </div>
+        <div className="w-full max-w-[1400px] p-6 flex justify-center">
+            <button className="bg-white text-custom-green p-3 w-fit px-8 mt-6 rounded-full flex flex-nowrap gap-2 transition-colors duration-150 ease-in-out hover:bg-red-600 cursor-pointer hover:text-white">View Leadership</button>
         </div>
       </div>
         <Footer />
