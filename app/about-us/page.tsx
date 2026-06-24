@@ -173,13 +173,24 @@ export default function AboutUs(){
             <button className="bg-white text-custom-green p-3 w-fit px-8 mt-6 rounded-full flex flex-nowrap gap-2 transition-colors duration-150 ease-in-out hover:bg-red-600 cursor-pointer hover:text-white">View Leadership</button>
         </div>
       </div>
-      <div className="w-full h-[100vh]" style={{
+      <div className="w-full h-[100vh] relative" style={{
             backgroundImage: `url(/images/pexels-lagosfoodbank-8042458.jpg)`, 
             backgroundRepeat: "no-repeat", 
             backgroundSize: "cover", 
             backgroundAttachment: "fixed"
         }}>
-
+        <div className="w-full h-full bg-black absolute opacity-30" />
+        <div className="w-full h-full absolute z-10 text-white p-6 flex justify-center">
+            <div className="w-full max-w-[1400px] flex flex-col justify-center">
+                <span>NETWORK</span>
+                <h2 className="text-4xl text-white uppercase">Our Global Network</h2>
+                <p className="mt-4 w-full max-w-[700px]">
+                    With the support of our colleagues around the world, and collaboration with the UK Government and the World Bank, we are establishing a comprehensive international network spanning over 150 countries.
+                </p>
+                <button className="bg-red-600 text-white p-3 w-fit px-8 mt-6 rounded-full flex flex-nowrap gap-2 transition-colors duration-150 ease-in-out hover:bg-red-700 cursor-pointer hover:text-white">View Our Network</button>
+            </div>
+            
+        </div>
       </div>
         <Footer with_no_margin />
         </>
