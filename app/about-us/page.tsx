@@ -142,7 +142,7 @@ export default function AboutUs(){
         <div className="w-full h-full flex flex-nowrap absolute z-20">
             {approaches.map((approach, index) => (
                 <div key={index} 
-                    onMouseEnter={()=> setSectionBackground(approach.image)}
+                    onClick={()=> setSectionBackground(approach.image)}
                     className={`w-full flex flex-col justify-center p-6 border-white ${index === 0 ? '' : 'border-l'}`}>
                     <div className="w-[60px] h-[60px] relative">
                         <Image src={approach.icon} fill alt="" />
@@ -173,7 +173,15 @@ export default function AboutUs(){
             <button className="bg-white text-custom-green p-3 w-fit px-8 mt-6 rounded-full flex flex-nowrap gap-2 transition-colors duration-150 ease-in-out hover:bg-red-600 cursor-pointer hover:text-white">View Leadership</button>
         </div>
       </div>
-        <Footer />
+      <div className="w-full h-[100vh]" style={{
+            backgroundImage: `url(/images/pexels-lagosfoodbank-8042458.jpg)`, 
+            backgroundRepeat: "no-repeat", 
+            backgroundSize: "cover", 
+            backgroundAttachment: "fixed"
+        }}>
+
+      </div>
+        <Footer with_no_margin />
         </>
     )
 }

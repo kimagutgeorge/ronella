@@ -27,9 +27,9 @@ const officeDetails = [
   },
 ];
 
-export default function Footer() {
+export default function Footer({with_no_margin}) {
   return (
-    <div className="w-full flex justify-center mt-20 py-14 bg-black">
+    <div className={`w-full flex justify-center ${ with_no_margin ? '' : 'mt-20' } py-14 bg-black`}>
       <div className="w-full p-6 max-w-[1400px] flex flex-col lg:flex-row gap-10">
 
         {/* Left Section */}
