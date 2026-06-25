@@ -5,8 +5,8 @@ import { useState, useEffect } from "react";
 
 const navbar_items = [
     { label: "About us", link: "/about-us" },
-    { label: "What We Do", link: "#" },
-    { label: "Technology Pathway", link: "#" },
+    { label: "What We Do", link: "/what-we-do" },
+    { label: "Technology Pathway", link: "/technology-pathway" },
     { label: "Projects", link: "#" },
     { label: "Partners", link: "#" },
     { label: "Insights", link: "#" },
