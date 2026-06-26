@@ -53,6 +53,13 @@ const members = [
 
 export default function AboutUs(){
     const [sectionBackground, setSectionBackground] = useState("/images/pexels-lorna-pauli-1320744316-36093586.jpg");
+    const [visibleApproach, setVisibleApproach] = useState(0);
+
+    function setNewVisibleApproach(bg: string, key:number){
+        setSectionBackground(bg);
+        setVisibleApproach(key);
+    }
+
     return(
         <>
         <div className="w-full h-[90vh] relative">
@@ -107,8 +114,10 @@ export default function AboutUs(){
 
     <div className="w-full flex mt-10 h-100">
         <div className="w-1/2 p-8 flex flex-col justify-center">
+        <Reveal direction="up" delay={50} duration={700}>
             <h1 className="text-3xl font-semibold text-black">Our Mission</h1>
             <p className="mt-6">Having had the privilege of growing up in the Western world, we are deeply driven by a passion to help create a cleaner, healthier future – not only for those less fortunate, but also for our own children. Guided by empathy, integrity, and unwavering determination, we strive to uplift the vulnerable and champion sustainable solutions that protect our planet.</p>
+        </Reveal>
         </div>
         <div className="w-1/2" style={{
             backgroundImage: "url(/images/pexels-lagosfoodbank-8042458.jpg)",
@@ -129,56 +138,39 @@ export default function AboutUs(){
         
         </div>
         <div className="w-1/2 p-8 flex flex-col justify-center">
+        <Reveal direction="up" delay={50} duration={700}>
             <h1 className="text-3xl font-semibold text-black">Our Role</h1>
             <p className="mt-6">In collaboration with our international partners, we are committed to ensuring that technology serves to address real-world problems that people face. We design customised programs tailored to meet the specific needs of end users, solving critical issues they encounter. We also emphasise that these initiatives represent sustainable business opportunities that do not require substantial upfront investments. Instead, participants contribute value through their efforts and by maintaining transparency in project management. Our goal is to actively support the development and market introduction of transformative ideas. We facilitate access to funding, encourage cross-border partnerships, and accelerate the deployment of sustainable solutions, driving technological innovation and fostering global collaboration.</p>
+        </Reveal>
         </div>
       </div>
 
-      {/* about us */}
-      {/* <div className="w-full flex justify-center mt-20">
-        <div className="w-full max-w-[1400px] p-10 bg-custom-green flex text-white rounded-xl">
-            <div className="w-1/2 p-4">
-            <Reveal direction="up" delay={150} duration={700}>
-                <span className="text-[15px] font-bold">ABOUT US</span>
-                <h2 className="text-3xl font-medium mt-4">Working together for a more sustainable future </h2>
-                </Reveal>
-                <Reveal direction="up" delay={300} duration={700}>
-                    <p className="mt-4">
-                    Climate change is affecting communities across the world, with the greatest impact often felt by those most vulnerable to environmental and economic challenges. Ronella works alongside partners globally to deliver practical, sustainable solutions that help communities adapt, thrive, and build long-term resilience. Our work focuses on improving access to clean water, supporting climate-resilient food production, developing safe and affordable sustainable housing.
-                    </p>
-                    <div className="mt-6 w-full flex gap-4">
-                        <button className="bg-white text-custom-green p-3 w-fit px-8 mt-6 rounded-full flex flex-nowrap gap-2 transition-colors duration-150 ease-in-out hover:bg-red-700 hover:text-[#ffffff] cursor-pointer">
-                            Learn More
-                        </button>
-
-                         <button className="bg-red-600 text-white p-3 w-fit px-8 mt-6 rounded-full flex flex-nowrap gap-2 transition-colors duration-150 ease-in-out hover:bg-red-700 cursor-pointer">
-                            Donate
-                        </button>
-                    </div>
-                </Reveal>
-            </div>
-            <div className="w-1/2 aspect-4/2.5 p-4">
-                <div className="w-full h-full relative">
-                    <Image src="/images/pexels-david-pastory-1377991555-37807581.jpg" fill alt="" className="object-cover rounded-xl" />
-                </div>
-            </div>
-        </div>
-      </div> */}
         <div className="w-full h-170 mt-20 relative" style={{
                 backgroundImage: `url(${sectionBackground})`, 
                 backgroundSize: "cover", 
                 backgroundRepeat: "no-repeat"
             }}>
-            <div className="bg-black opacity-50 h-full w-full absolute z-10" />
+            <div className="bg-black opacity-60 h-full w-full absolute z-10" />
             <div className="w-full h-full flex flex-nowrap absolute z-20">
                 {approaches.map((approach, index) => (
                     <div key={index} 
-                        onClick={()=> setSectionBackground(approach.image)}
-                        className={`w-full flex flex-col justify-center p-6 border-white cursor-pointer ${index === 0 ? '' : 'border-l'}`}>
-                        <div className="w-[60px] h-[60px] relative">
+                        onClick={()=> setNewVisibleApproach(approach.image, index)}
+                        className={`w-full flex flex-col justify-center p-6 border-white cursor-pointer ${index === 0 ? '' : 'border-l-2'}`}>
+                        <>
+                        <Reveal key={`icon-${visibleApproach === index}`} direction="up" delay={10} duration={700}>
+                            <div className="w-[50px] h-[50px] relative">
                             <Image src={approach.icon} fill alt="" />
-                        </div>
-                        <h2 className="text-white text-4xl font-medium">{approach.title}</h2>
+                            </div>
+                        </Reveal>
+                        <Reveal key={`title-${visibleApproach === index}`} direction="up" delay={100} duration={700}>
+                            <h2 className="text-white text-4xl font-medium">{approach.title}</h2>
+                        </Reveal>
+                        {visibleApproach === index && (
+                            <Reveal direction="up" delay={200} duration={700}>
+                            <p className="text-white mt-4">{approach.description}</p>
+                            </Reveal>
+                        )}
+                        </>
                     </div>
                 ))}
             </div>
@@ -205,8 +197,8 @@ export default function AboutUs(){
             <button className="bg-red-600 text-white p-3 w-fit px-8 mt-6 rounded-full flex flex-nowrap gap-2 transition-colors duration-150 ease-in-out hover:bg-red-700 cursor-pointer hover:text-white">View Leadership</button>
         </div>
       </div>
-      <div className="w-full h-[100vh] relative" style={{
-            backgroundImage: `url(/images/pexels-lagosfoodbank-8042458.jpg)`, 
+      <div className="w-full h-200 relative" style={{
+            backgroundImage: `url(/images/pexels-lorna-pauli-1320744316-36093586.jpg)`, 
             backgroundRepeat: "no-repeat", 
             backgroundSize: "cover", 
             backgroundAttachment: "fixed"
