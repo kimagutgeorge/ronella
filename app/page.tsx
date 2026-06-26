@@ -6,6 +6,7 @@ import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Reveal, RevealGroup } from "./hooks/reveal.jsx"
+import Loader from "./components/Loader";
 
 import Mapanada_road from "./assets/projects/Mapanada_road.avif";
 import afritak_image from "./assets/projects/pexels-mikomikarro-25945334.jpg";
@@ -94,6 +95,7 @@ export default function Home() {
   const [current, setCurrent] = useState(0);
   const [progressKey, setProgressKey] = useState(0);
   const [animKey, setAnimKey] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   const goTo = (index: number) => {
     setCurrent(index);
@@ -108,8 +110,22 @@ export default function Home() {
     return () => clearTimeout(timeout);
   }, [current]);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+
   return (
     <>
+    {loading && (
+      <Loader />
+    )}
+    {!loading && (
+      <>
       <style>{`
         /* ── Hero slider animations ── */
         @keyframes grow-width { from { width: 0% } to { width: 100% } }
@@ -415,6 +431,8 @@ export default function Home() {
         </div>
       </div>
       <Footer />
+      </>
+    )}
     </>
   );
 }

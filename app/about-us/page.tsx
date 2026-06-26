@@ -3,7 +3,8 @@ import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Reveal, RevealGroup } from "../hooks/reveal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Loader from "../components/Loader";
 
 const approaches = [
     {
@@ -54,13 +55,27 @@ const members = [
 export default function AboutUs(){
     const [sectionBackground, setSectionBackground] = useState("/images/pexels-lorna-pauli-1320744316-36093586.jpg");
     const [visibleApproach, setVisibleApproach] = useState(0);
+    const [loading, setLoading] = useState(true);
 
     function setNewVisibleApproach(bg: string, key:number){
         setSectionBackground(bg);
         setVisibleApproach(key);
     }
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+          setLoading(false);
+        }, 1000);
+    
+        return () => clearTimeout(timer);
+      }, []);
+
     return(
+        <>
+        {loading && (
+            <Loader />
+        )}
+        {!loading && (
         <>
         <div className="w-full h-[90vh] relative">
             <Navbar />
@@ -217,6 +232,8 @@ export default function AboutUs(){
         </div>
       </div>
         <Footer with_no_margin />
+        </>
+        )}
         </>
     )
 }
