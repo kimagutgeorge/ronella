@@ -77,7 +77,7 @@ export default function AboutUs(){
         </div>
               {/* ── About Us ─────────────────────────────────────────────────
            Heading fades up, paragraphs slide in from left & right    */}
-      <div className="w-full flex justify-center mt-20 py-20 items-center">
+      <div className="w-full flex justify-center mt-10 py-20 items-center">
         <div className="w-full max-w-[1000px] px-6">
 
           <Reveal direction="up" delay={150} duration={700}>
@@ -91,19 +91,51 @@ export default function AboutUs(){
           </Reveal>
 
           <Reveal direction="up" delay={300} duration={700}>
-            <p className="mt-6 text-center text-xl">
-              Through our global network, we foster collaboration with leading innovators in
-              waste-to-energy, renewable power, water purification, food security, and modular
-              housing – delivering impactful solutions that help reduce humanity's environmental
-              footprint. Together, we are shaping a cleaner, more sustainable world.
-            </p>
+            <div className="mt-6 w-full flex justify-center gap-4">
+                <button className="bg-custom-green text-white p-3 w-fit px-8 mt-6 rounded-full flex flex-nowrap gap-2 transition-colors duration-150 ease-in-out hover:bg-red-700 hover:text-[#ffffff] cursor-pointer">
+                    Learn More
+                </button>
+
+                    <button className="bg-red-600 text-white p-3 w-fit px-8 mt-6 rounded-full flex flex-nowrap gap-2 transition-colors duration-150 ease-in-out hover:bg-red-700 cursor-pointer">
+                    Donate
+                </button>
+            </div>
           </Reveal>
 
         </div>
       </div>
 
+    <div className="w-full flex mt-10 h-100">
+        <div className="w-1/2 p-8 flex flex-col justify-center">
+            <h1 className="text-3xl font-semibold text-black">Our Mission</h1>
+            <p className="mt-6">Having had the privilege of growing up in the Western world, we are deeply driven by a passion to help create a cleaner, healthier future – not only for those less fortunate, but also for our own children. Guided by empathy, integrity, and unwavering determination, we strive to uplift the vulnerable and champion sustainable solutions that protect our planet.</p>
+        </div>
+        <div className="w-1/2" style={{
+            backgroundImage: "url(/images/pexels-lagosfoodbank-8042458.jpg)",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundAttachment: "fixed"
+      }}>
+        
+        </div>
+      </div>
+        <div className="w-full flex h-100">
+        <div className="w-1/2" style={{
+            backgroundImage: "url(/images/pexels-lagosfoodbank-8042458.jpg)",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundAttachment: "fixed"
+      }}>
+        
+        </div>
+        <div className="w-1/2 p-8 flex flex-col justify-center">
+            <h1 className="text-3xl font-semibold text-black">Our Role</h1>
+            <p className="mt-6">In collaboration with our international partners, we are committed to ensuring that technology serves to address real-world problems that people face. We design customised programs tailored to meet the specific needs of end users, solving critical issues they encounter. We also emphasise that these initiatives represent sustainable business opportunities that do not require substantial upfront investments. Instead, participants contribute value through their efforts and by maintaining transparency in project management. Our goal is to actively support the development and market introduction of transformative ideas. We facilitate access to funding, encourage cross-border partnerships, and accelerate the deployment of sustainable solutions, driving technological innovation and fostering global collaboration.</p>
+        </div>
+      </div>
+
       {/* about us */}
-      <div className="w-full flex justify-center mt-20">
+      {/* <div className="w-full flex justify-center mt-20">
         <div className="w-full max-w-[1400px] p-10 bg-custom-green flex text-white rounded-xl">
             <div className="w-1/2 p-4">
             <Reveal direction="up" delay={150} duration={700}>
@@ -131,46 +163,46 @@ export default function AboutUs(){
                 </div>
             </div>
         </div>
-      </div>
-
-      <div className="w-full h-[80vh] mt-20 relative" style={{
-            backgroundImage: `url(${sectionBackground})`, 
-            backgroundSize: "cover", 
-            backgroundRepeat: "no-repeat"
-        }}>
-        <div className="bg-black opacity-50 h-full w-full absolute z-10" />
-        <div className="w-full h-full flex flex-nowrap absolute z-20">
-            {approaches.map((approach, index) => (
-                <div key={index} 
-                    onClick={()=> setSectionBackground(approach.image)}
-                    className={`w-full flex flex-col justify-center p-6 border-white ${index === 0 ? '' : 'border-l'}`}>
-                    <div className="w-[60px] h-[60px] relative">
-                        <Image src={approach.icon} fill alt="" />
+      </div> */}
+        <div className="w-full h-170 mt-20 relative" style={{
+                backgroundImage: `url(${sectionBackground})`, 
+                backgroundSize: "cover", 
+                backgroundRepeat: "no-repeat"
+            }}>
+            <div className="bg-black opacity-50 h-full w-full absolute z-10" />
+            <div className="w-full h-full flex flex-nowrap absolute z-20">
+                {approaches.map((approach, index) => (
+                    <div key={index} 
+                        onClick={()=> setSectionBackground(approach.image)}
+                        className={`w-full flex flex-col justify-center p-6 border-white cursor-pointer ${index === 0 ? '' : 'border-l'}`}>
+                        <div className="w-[60px] h-[60px] relative">
+                            <Image src={approach.icon} fill alt="" />
+                        </div>
+                        <h2 className="text-white text-4xl font-medium">{approach.title}</h2>
                     </div>
-                    <h2 className="text-white text-4xl font-medium">{approach.title}</h2>
-                </div>
-            ))}
+                ))}
+            </div>
+            
         </div>
-        
-      </div>
 
       {/* member section */}
-      <div className="w-full mt-20 flex flex-col justify-center items-center bg-custom-green py-10">
+      {/* bg-custom-green */}
+      <div className="w-full mt-20 flex flex-col justify-center items-center py-10">
         <div className="w-full max-w-[1400px] p-6">
-            <h2 className="text-center text-4xl text-white uppercase">Governance</h2>
+            <h2 className="text-center text-4xl text-custom-green uppercase">Governance</h2>
         </div>
         <div className="w-full max-w-[1400px] p-6 flex gap-4">
             {members.map((mem, index) => (
-                <div key={index} className="w-[25%] p-4 flex flex-col justify-center items-center">
+                <div key={index} className="w-[25%] p-4 flex flex-col justify-center items-center shadow-md shadow-transparent cursor-pointer transition-all duration-150 hover:shadow-gray-200">
                     <div className="w-[200px] h-[200px] aspect-square relative">
                         <Image src={mem.image} fill alt="" className="rounded-full" />
                     </div>
-                    <h3 className="mt-4 text-xl font-bold text-white">{mem.title}</h3>
+                    <h3 className="mt-4 text-xl font-bold text-custom-blue">{mem.title}</h3>
                 </div>
             ))}
         </div>
         <div className="w-full max-w-[1400px] p-6 flex justify-center">
-            <button className="bg-white text-custom-green p-3 w-fit px-8 mt-6 rounded-full flex flex-nowrap gap-2 transition-colors duration-150 ease-in-out hover:bg-red-600 cursor-pointer hover:text-white">View Leadership</button>
+            <button className="bg-red-600 text-white p-3 w-fit px-8 mt-6 rounded-full flex flex-nowrap gap-2 transition-colors duration-150 ease-in-out hover:bg-red-700 cursor-pointer hover:text-white">View Leadership</button>
         </div>
       </div>
       <div className="w-full h-[100vh] relative" style={{
