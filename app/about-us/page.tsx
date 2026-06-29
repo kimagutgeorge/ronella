@@ -77,7 +77,7 @@ export default function AboutUs(){
         )}
         {!loading && (
         <>
-        <div className="w-full h-[90vh] relative">
+        <div className="w-full h-[70vh] relative">
             <Navbar />
             <div className="w-full h-full absolute">
                 <div className="w-full h-full relative">
@@ -118,7 +118,7 @@ export default function AboutUs(){
                     Learn More
                 </button>
 
-                    <button className="bg-red-600 text-white p-3 w-fit px-8 mt-6 rounded-full flex flex-nowrap gap-2 transition-colors duration-150 ease-in-out hover:bg-red-700 cursor-pointer">
+                <button className="bg-red-600 text-white p-3 w-fit px-8 mt-6 rounded-full flex flex-nowrap gap-2 transition-colors duration-150 ease-in-out hover:bg-red-700 cursor-pointer">
                     Donate
                 </button>
             </div>
