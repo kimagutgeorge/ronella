@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 export default function WhatWeDo(){
     return(
         <>
-            <Navbar />
+            <Navbar isNotAbsolute />
             <Footer />
         </>
     )

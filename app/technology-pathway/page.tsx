@@ -95,7 +95,7 @@ function ImageCarousel({ images }) {
 
     return (
         <div className="flex flex-col h-full w-full">
-            <div className="relative w-full h-64 md:h-96 overflow-hidden bg-gray-100">
+            <div className="relative w-full h-120 md:h-120 overflow-hidden bg-gray-100">
                 <Image
                     src={images[current].image}
                     fill
@@ -139,7 +139,7 @@ function ImageCarousel({ images }) {
 
             {/* Description below the image */}
             {images[current].description && (
-                <p className="mt-2 text-sm text-gray-500 italic text-center px-2">
+                <p className="mt-2 text-sm text-gray-500 italic px-2">
                     {images[current].description}
                 </p>
             )}
@@ -246,7 +246,7 @@ export default function TechnologyPathway() {
                                     } items-center border-b border-gray-100 last:border-b-0`}
                                 >
                                     {/* Text block */}
-                                    <div className="w-full md:w-1/2">
+                                    <div className="w-full md:w-[40%]">
                                         <h2 className="text-black text-2xl font-semibold">{tech.title}</h2>
                                         <p className="mt-3 text-gray-600 leading-relaxed">{tech.description}</p>
                                         <div className="mt-4 ml-4">
@@ -262,7 +262,7 @@ export default function TechnologyPathway() {
                                     </div>
 
                                     {/* Image carousel */}
-                                    <div className="w-full md:w-1/2">
+                                    <div className="w-full md:w-[60%]">
                                         <ImageCarousel images={tech.images} />
                                     </div>
                                 </div>
