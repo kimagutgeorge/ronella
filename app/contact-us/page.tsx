@@ -58,9 +58,9 @@ export default function ContactUs(){
                                     </div>
                                     <div className="w-full mt-4 py-6 border-t border-gray-200">
                                         <p className="flex flex-nowrap gap-4 justify-between">
-                                            <span className="flex flex-col"><label className="text-semibold text-black">Email: </label> info@ronella.co.uk</span>
-                                            <span className="flex flex-col"><label className="text-semibold text-black">Company No: </label> 08765432</span>
-                                            <span className="flex flex-col"><label className="text-semibold text-black">VAT No: </label> GB 123 456 789</span>
+                                            <span className="flex flex-col"><label className="font-semibold text-black">Email: </label> info@ronella.co.uk</span>
+                                            <span className="flex flex-col"><label className="font-semibold text-black">Company No: </label> 08765432</span>
+                                            <span className="flex flex-col"><label className="font-semibold text-black">VAT No: </label> GB 123 456 789</span>
                                         </p>
                                     </div>
                                 </div>
@@ -71,7 +71,33 @@ export default function ContactUs(){
                     {/* contact us form */}
                     <div className="w-full flex justify-center mt-20">
                         <div className="w-full flex flex-wrap max-w-[1400px] p-6 gap-4">
-                            
+                            <div className="w-[48%] flex flex-col">
+                                <label className="font-semibold">First Name</label>
+                                <input type="text" className="border border-gray-400 bg-transparent p-3 mt-2 focus:outline-custom-blue" placeholder="Enter Your First Name" />
+                            </div>
+                            <div className="w-[48%] flex flex-col">
+                                <label className="font-semibold">Last Name</label>
+                                <input type="text" className="border border-gray-400 bg-transparent p-3 mt-2 focus:outline-custom-blue" placeholder="Enter Your Last Name" />
+                            </div>
+
+                            {/* row two */}
+                            <div className="w-[48%] flex flex-col">
+                                <label className="font-semibold">Email</label>
+                                <input type="text" className="border border-gray-400 bg-transparent p-3 mt-2 focus:outline-custom-blue" placeholder="someone@example.com" />
+                            </div>
+                            <div className="w-[48%] flex flex-col">
+                                <label className="font-semibold">Subject</label>
+                                <input type="text" className="border border-gray-400 bg-transparent p-3 mt-2 focus:outline-custom-blue" placeholder="Subject" />
+                            </div>
+
+                            {/* row thred */}
+                             <div className="w-[97%] flex flex-col">
+                                <label className="font-semibold">Message</label>
+                                <textarea className="border border-gray-400 bg-transparent p-3 mt-2 focus:outline-custom-blue h-80" placeholder="Message"></textarea>
+                                <button className="bg-custom-green text-white p-3 w-fit px-10 mt-6 rounded-full flex flex-nowrap gap-2 transition-colors duration-150 ease-in-out hover:bg-red-700 hover:text-[#ffffff] cursor-pointer">
+                                    Send Request
+                                </button>
+                             </div>
                         </div>
                     </div>
 
