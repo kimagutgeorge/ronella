@@ -15,8 +15,15 @@ const navbar_items = [
         ],
     },
     { label: "Partners", link: "/partners" },
-    { label: "Insights", link: "#" },
-    { label: "Contact", link: "#" },
+    {label: "More", link: "#",
+        children: [
+            {label: "R&D", link: "#"},
+            {label: "Insights", link: "#"},
+            {label: "COntacts", link: "/contact-us"}
+        ]
+    }
+    /* { label: "Insights", link: "#" },
+    { label: "Contact", link: "#" }, */
 ];
 
 function NavItem({ item, scrolled }: { item: typeof navbar_items[0]; scrolled: boolean }) {
