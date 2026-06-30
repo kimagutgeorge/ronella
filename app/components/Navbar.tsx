@@ -14,7 +14,7 @@ const navbar_items = [
             { label: "Mapanda", link: "/project/aftrak" },
         ],
     },
-    { label: "Partners", link: "#" },
+    { label: "Partners", link: "/partners" },
     { label: "Insights", link: "#" },
     { label: "Contact", link: "#" },
 ];
