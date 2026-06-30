@@ -149,23 +149,33 @@ export default function Partners(){
             {!loading && (
                 <>
                     {/* Hero */}
-                    <div className="w-full h-[50vh] relative">
+                    <div className="w-full h-[70vh] relative">
                         <Navbar />
                         <div className="w-full h-full absolute">
                             <div className="w-full h-full relative">
-                                <div className="w-full h-full absolute bg-custom-green z-30 " />
-                                {/* <div className="w-full h-full absolute z-10">
+                                <div className="w-full h-full absolute bg-black opacity-40 z-30 " />
+                                <div className="w-full h-full absolute z-10">
                                     <Image
                                         src="/images/bf1d90_bd9dbff3ae644a7ca28b8adcd940014e~mv2.avif"
                                         fill
                                         alt=""
                                         className="object-cover"
                                     />
-                                </div> */}
+                                </div>
                                 <div className="w-full h-full py-10 absolute z-40 flex justify-center">
                                     <div className="w-full h-full max-w-[1400px] flex flex-col justify-end py-6 p-6">
                                         <Reveal direction="up" delay={20} duration={700}>
-                                            <h1 className="text-6xl font-medium text-white max-w-[700px]">No One Solves Global Challenges Alone.</h1>
+                                            <h1 className="text-5xl font-medium text-white max-w-[1000px]">No One Solves Global Challenges Alone.</h1>
+                                        </Reveal>
+                                        <Reveal direction="up" delay={100} duration={700}>
+                                            <p className="mt-6 max-w-[1000px] text-white">
+                                            We collaborate with our global contacts to help them draft concise briefs and identify potential solutions for their local challenges. After conducting a due diligence check and high-level feasibility assessments
+                                        </p>
+                                        </Reveal>
+                                        <Reveal direction="up" delay={150} duration={700}>
+                                            <button className="bg-custom-blue text-white p-3 w-fit px-8 mt-8 rounded-full flex flex-nowrap gap-2 transition-colors duration-150 ease-in-out hover:bg-red-700 cursor-pointer">
+                                                Partner with us
+                                            </button>
                                         </Reveal>
                                     </div>
                                 </div>
@@ -174,7 +184,7 @@ export default function Partners(){
                     </div>
 
                     {/* why partnerships matter */}
-                    <div className="w-full flex justify-center gap-6">
+                    {/* <div className="w-full flex justify-center gap-6">
                             <div className="w-1/2 p-8 flex flex-col justify-center pl-[280px]">
                             <Reveal direction="up" delay={100} duration={700}>
                                 <p className="mt-6">
@@ -199,7 +209,7 @@ export default function Partners(){
                                 
                             </div>
                             
-                    </div>
+                    </div> */}
 
                     {/* Partners */}
                     <div className="w-full flex justify-center mt-20">
@@ -212,7 +222,7 @@ export default function Partners(){
                                         onClick={() => setActiveCategory("All")}
                                         className={`px-6 py-2 rounded-full whitespace-nowrap transition-colors duration-150 ease-in-out cursor-pointer ${
                                             isAll
-                                                ? "bg-custom-green text-white"
+                                                ? "bg-custom-blue text-white"
                                                 : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                                         }`}
                                     >
@@ -224,7 +234,7 @@ export default function Partners(){
                                             onClick={() => setActiveCategory(partner.category)}
                                             className={`px-6 py-2 rounded-full whitespace-nowrap transition-colors duration-150 ease-in-out cursor-pointer ${
                                                 activeCategory === partner.category
-                                                    ? "bg-custom-green text-white"
+                                                    ? "bg-custom-blue text-white"
                                                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                                             }`}
                                         >
@@ -237,7 +247,7 @@ export default function Partners(){
                             {/* description, only shown for a selected category (not "All") */}
                             {!isAll && activePartner && (
                                 <Reveal direction="up" delay={50} duration={700}>
-                                    <p className="mt-8 max-w-[900px] text-gray-600">
+                                    <p className="mt-8  text-gray-600">
                                         {activePartner.description}
                                     </p>
                                 </Reveal>
