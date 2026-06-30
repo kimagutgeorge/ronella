@@ -234,20 +234,35 @@ export default function TechnologyPathway() {
                         </div>
                     </div>
 
-                    {/* Technology sections — alternating layout */}
+                    {/* Technology sections — alternating layout, offset-frame
+                        treatment matching the "We start by listening" panel:
+                        a blue outline frame sits behind the image, offset
+                        toward the side the text sits on, with a numbered
+                        card overlapping the opposite corner. No fixed
+                        backgrounds — everything here scrolls normally. */}
                     <div className="w-full flex flex-col items-center mt-10">
                         {technology_areas.map((tech, index) => {
                             const isEven = index % 2 === 0; // even → text left, image right
+                            const areaNumber = String(index + 1).padStart(2, "0");
+
                             return (
                                 <div
                                     key={index}
-                                    className={`w-full max-w-[1400px] p-6 py-12 flex flex-col gap-8 ${
+                                    className={`w-full max-w-[1400px] p-6 py-16 flex flex-col gap-12 md:gap-8 ${
                                         isEven ? "md:flex-row" : "md:flex-row-reverse"
                                     } items-center border-b border-gray-100 last:border-b-0`}
                                 >
                                     {/* Text block */}
-                                    <div className="w-full md:w-[40%]">
-                                        <h2 className="text-black text-2xl font-semibold">{tech.title}</h2>
+                                    <Reveal
+                                        direction={isEven ? "left" : "right"}
+                                        duration={700}
+                                        threshold={0.15}
+                                        className="w-full md:w-[40%]"
+                                    >
+                                        <span className="text-sm font-semibold text-custom-blue uppercase">
+                                            {areaNumber}
+                                        </span>
+                                        <h2 className="mt-2 text-black text-2xl font-semibold">{tech.title}</h2>
                                         <p className="mt-3 text-gray-600 leading-relaxed">{tech.description}</p>
                                         <div className="mt-4 ml-4">
                                             <h3 className="text-base text-black font-medium">{tech.item_title}</h3>
@@ -259,12 +274,37 @@ export default function TechnologyPathway() {
                                                 ))}
                                             </ul>
                                         </div>
-                                    </div>
+                                    </Reveal>
 
-                                    {/* Image carousel */}
-                                    <div className="w-full md:w-[60%]">
-                                        <ImageCarousel images={tech.images} />
-                                    </div>
+                                    {/* Image carousel — offset frame + overlapping number card */}
+                                    <Reveal
+                                        direction={isEven ? "right" : "left"}
+                                        delay={150}
+                                        duration={700}
+                                        threshold={0.15}
+                                        className="w-full md:w-[60%]"
+                                    >
+                                        <div className="relative w-full">
+                                            <div
+                                                className={`hidden md:block absolute -top-6 w-full h-full border-2 border-custom-blue ${
+                                                    isEven ? "-right-6" : "-left-6"
+                                                }`}
+                                            />
+                                            <div className="relative">
+                                                <ImageCarousel images={tech.images} />
+                                            </div>
+                                            <div
+                                                className={`hidden sm:flex absolute -bottom-6 z-20 bg-white px-5 py-3 shadow-xl items-baseline gap-2 ${
+                                                    isEven ? "-left-6" : "-right-6"
+                                                }`}
+                                            >
+                                                <span className="text-2xl font-bold text-custom-blue">{areaNumber}</span>
+                                                <span className="text-xs uppercase tracking-wide text-gray-500 max-w-[140px]">
+                                                    {tech.title}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </Reveal>
                                 </div>
                             );
                         })}

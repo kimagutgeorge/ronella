@@ -17,8 +17,8 @@ const navbar_items = [
     { label: "Partners", link: "/partners" },
     {label: "More", link: "#",
         children: [
-            {label: "R&D", link: "#"},
-            {label: "Insights", link: "#"},
+            {label: "R&D", link: "/r-and-d"},
+            {label: "Insights", link: "/insights"},
             {label: "COntacts", link: "/contact-us"}
         ]
     }

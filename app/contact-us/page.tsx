@@ -22,13 +22,15 @@ export default function ContactUs(){
                 <>
                     <Navbar isNotAbsolute />
                     <div className="w-full h-[70vh] relative mt-16">
-                        <div className="w-full h-full absolute ">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3097.179139955007!2d-0.12614482281529257!3d51.514756071814936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876058c7c9527fb%3A0x79bc7464573598c1!2s71-75%20Shelton%20St%2C%20London%20WC2H%209JQ%2C%20UK!5e1!3m2!1sen!2ske!4v1782798913134!5m2!1sen!2ske" 
+                        <div className="w-full h-full absolute">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3097.179139955007!2d-0.12614482281529257!3d51.514756071814936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876058c7c9527fb%3A0x79bc7464573598c1!2s71-75%20Shelton%20St%2C%20London%20WC2H%209JQ%2C%20UK!5e1!3m2!1sen!2ske!4v1782798913134!5m2!1sen!2ske"
                                 className="w-full h-full"
-                                style={{border: "0"}}
-                                allowfullscreen="" 
-                                loading="lazy" 
-                                referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                                style={{ border: "0" }}
+                                allowFullScreen
+                                loading="lazy"
+                                referrerPolicy="strict-origin-when-cross-origin"
+                            />
                         </div>
 
                         {/* details */}
