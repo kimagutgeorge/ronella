@@ -370,20 +370,31 @@ export default function Home() {
         <div className="w-full max-w-[1400px] flex">
 
           {/* Left copy – slides in from left */}
-          <Reveal direction="left" duration={800} threshold={0.15} className="w-[40%] flex justify-around flex-col p-6">
+          <Reveal
+            direction="left"
+            duration={800}
+            threshold={0.15}
+            className="w-[40%] flex justify-around flex-col p-6"
+          >
             <h3 className="font-bold text-lg">PROJECTS</h3>
-            <h4 className="w-full text-4xl text-black uppercase">Empowering communities</h4>
-            <h4 className="font-semibold text-lg">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-              qui officia deserunt mollit anim id est laborum.
+
+            <h4 className="w-full text-4xl text-black uppercase">
+              Delivering Sustainable Impact
             </h4>
+
+            <h4 className="font-semibold text-lg">
+              Our projects bring together innovation, research, and strategic partnerships to address
+              global challenges in healthcare, food security, clean energy, and climate resilience.
+            </h4>
+
             <p>
-              Their solar-powered microgrid and micro-tractor system has already transformed
-              farming conditions for smallholder communities in East Africa.
+              By working alongside governments, communities, universities, and technology providers,
+              we develop practical solutions that create lasting social, economic, and environmental
+              impact where they are needed most.
             </p>
+
             <button className="bg-red-500 text-white p-3 w-fit px-8 mt-6 rounded-full flex flex-nowrap gap-2 transition-colors duration-150 ease-in-out hover:bg-red-600 cursor-pointer">
-              Get Started
+              Explore Projects
             </button>
           </Reveal>
 
