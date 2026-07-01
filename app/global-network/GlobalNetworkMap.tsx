@@ -2,7 +2,8 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { BsArrowLeft } from "react-icons/bs";
 import L from "leaflet"
 import "leaflet/dist/leaflet.css"
 import Loader from "../components/Loader"
@@ -83,9 +84,9 @@ export default function GlobalNetworkMap() {
                 <div className="relative w-full h-full">
                     <button
                         onClick={() => router.back()}
-                        className="absolute top-4 left-20 z-[1000] cursor-pointer bg-white text-gray-900 px-4 py-2 border border-gray-300 shadow-md hover:bg-gray-100 transition-colors"
+                        className="absolute top-4 left-20 z-[1000] flex flex-nowrap gap-2 justify-center items-center cursor-pointer bg-white text-gray-900 px-4 py-2 border border-gray-300 shadow-md hover:bg-gray-100 transition-colors"
                     >
-                        Back
+                        <BsArrowLeft size={17} /> Back
                     </button>
 
                     <MapContainer
