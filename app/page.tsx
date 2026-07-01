@@ -17,9 +17,9 @@ const slides = [
     id: 0,
     type: "video" as const,
     src: "/videos/9653705-hd_1920_1080_25fps.mp4",
-    heading: "Healing, Feeding and Fueling the world",
+    heading: "Healing, Feeding and Fueling the World",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "Working with global partners to deliver sustainable solutions that improve healthcare, strengthen food security, expand access to clean energy, and help communities thrive.",
   },
   {
     id: 1,
@@ -27,7 +27,7 @@ const slides = [
     src: "bf1d90_20b6ef15f9054ad8bd49d3000cf6495bf000 (1).avif",
     heading: "Building a Better Tomorrow Through Innovation",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "Connecting pioneering technologies with local communities to create practical, scalable solutions that address climate change and improve quality of life.",
   },
   {
     id: 2,
@@ -35,7 +35,7 @@ const slides = [
     className: "bg-gradient-to-br from-blue-900 to-blue-600",
     heading: "Building a Better Tomorrow Through Innovation",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "Through research, collaboration, and strategic partnerships, we help transform innovative ideas into sustainable projects that deliver lasting environmental and social impact.",
   },
   {
     id: 3,
@@ -43,7 +43,7 @@ const slides = [
     className: "bg-gradient-to-br from-emerald-900 to-emerald-600",
     heading: "Empowering Communities Across the Globe",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "We work alongside governments, researchers, businesses, and local communities to develop resilient solutions that create opportunity, strengthen livelihoods, and protect the planet.",
   },
 ];
 

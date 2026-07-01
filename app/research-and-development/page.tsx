@@ -21,9 +21,43 @@ export default function ResearchAndDevelopment(){
             {loading && <Loader />}
             {!loading && (
                 <>
+                    <Navbar isNotAbsolute />
                     {/* Hero */}
-                    <div className="w-full h-[70vh] relative">
-                        <Navbar />
+                    <div className="w-full flex justify-center mt-20">
+                        <div className="w-full max-w-[1400px] p-6 flex">
+                            <div className="w-1/2 pr-10">
+                                <h1 className="text-5xl font-bold text-black">
+                                    Research and Development
+                                </h1>
+                            </div>
+                            <div className="w-1/2 pl-6">
+                                <p className="text-lg mt-6">
+                                    While protecting innovation remains paramount, technologies that safeguard the planet and enhance quality of life should thrive through collaboration by establishing strategic communication channels connecting entrepreneurs, startups, and growing companies with cutting-edge research across industries, from independent laboratories to the world's leading universities.
+                                </p>
+
+                                {/* CTA */}
+                                <Reveal direction="up" delay={300} duration={700}>
+                                    <div className="mt-6 w-full flex gap-4">
+                                        <button className="bg-custom-green text-white p-3 w-fit px-8 mt-6 rounded-full flex flex-nowrap gap-2 transition-colors duration-150 ease-in-out hover:bg-red-700 hover:text-[#ffffff] cursor-pointer">
+                                            Collaborate with Ronella
+                                        </button>
+
+                                        <button className="bg-red-600 text-white p-3 w-fit px-8 mt-6 rounded-full flex flex-nowrap gap-2 transition-colors duration-150 ease-in-out hover:bg-red-700 cursor-pointer">
+                                            Get Started
+                                        </button>
+                                    </div>
+                                </Reveal>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div className="w-full h-150 mt-10" style={{
+                        backgroundImage: "url(/images/pexels-sergey-sergeev-2153675005-32845699.avif)",
+                        backgroundRepeat: "no-repeat",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center"
+                        }} />
+                    {/* <div className="w-full h-[70vh] relative">
                         <div className="w-full h-full absolute">
                             <div className="w-full h-full relative">
                                 <div className="w-full h-full absolute bg-black z-30 opacity-30" />
@@ -52,7 +86,7 @@ export default function ResearchAndDevelopment(){
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     <Footer />
                     </>
