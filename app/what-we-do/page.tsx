@@ -300,7 +300,7 @@ export default function WhatWeDo() {
 
               <div className="w-full flex justify-center mt-14">
                 <Link
-                  href="/projects"
+                  href="#"
                   className="bg-red-500 text-white p-3 w-fit px-8 rounded-full flex flex-nowrap gap-2 transition-colors duration-150 ease-in-out hover:bg-red-600 cursor-pointer"
                 >
                   Explore Projects
