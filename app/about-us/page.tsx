@@ -255,7 +255,7 @@ export default function AboutUs(){
                 <p className="mt-4 w-full max-w-[700px]">
                     With the support of our colleagues around the world, and collaboration with the UK Government and the World Bank, we are establishing a comprehensive international network spanning over 150 countries.
                 </p>
-                <button className="bg-red-600 text-white p-3 w-fit px-8 mt-6 rounded-full flex flex-nowrap gap-2 transition-colors duration-150 ease-in-out hover:bg-red-700 cursor-pointer hover:text-white">View Our Network</button>
+                <Link href="/global-network" className="bg-red-600 text-white p-3 w-fit px-8 mt-6 rounded-full flex flex-nowrap gap-2 transition-colors duration-150 ease-in-out hover:bg-red-700 cursor-pointer hover:text-white">View Our Network</Link>
             </div>
             
         </div>
